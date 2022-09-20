@@ -1,0 +1,13 @@
+<div class="data-group">
+  <div
+    *ngFor="let data of sourceData"
+    class="data-item"
+    [class.rendering]="checkShowPlaceholder(data)"
+  >
+    <p class="placeholder" *ngIf="checkShowPlaceholder(data)">
+      数据较多，可能加载时间较长，请您耐心等待
+    </p>
+
+    <p *ngIf="checkDataActive(data)">{{ data.label }}</p>
+  </div>
+</div>
